@@ -4,6 +4,7 @@
 // @description  Retrieve flags for a Stack Exchange site as JSON to clipboard
 // @version      0.90
 // @updateURL    https://github.com/NotTheDr01ds/stack-scripts/raw/main/SEFlags/GetSEFlags.user.js
+// @downloadURL  https://github.com/NotTheDr01ds/stack-scripts/raw/main/SEFlags/GetSEFlags.user.js
 // @author       NotTheDr01ds
 // @match        https://stackoverflow.com/users/flag-summary/*
 // @match        https://askubuntu.com/users/flag-summary/*
@@ -13,7 +14,7 @@
 // @match        https://stackapps.com/users/flag-summary/*
 // @match        https://*.stackexchange.com/users/flag-summary/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=stackexchange.com
-// @supportURL    http://github.com/NotTheDr01ds/stack-scripts/issues
+// @supportURL   http://github.com/NotTheDr01ds/stack-scripts/issues
 // @grant        GM_registerMenuCommand
 // @grant        GM_setClipboard
 // ==/UserScript==

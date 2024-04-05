@@ -2,7 +2,7 @@
 // @name         Get SE Post Flags
 // @namespace    http://github.com/NotTheDr01ds/stack-scripts
 // @description  Retrieve flags for a Stack Exchange site as JSON to clipboard
-// @version      0.90
+// @version      0.90.1
 // @updateURL    https://github.com/NotTheDr01ds/stack-scripts/raw/main/SEFlags/GetSEFlags.user.js
 // @downloadURL  https://github.com/NotTheDr01ds/stack-scripts/raw/main/SEFlags/GetSEFlags.user.js
 // @author       NotTheDr01ds
@@ -19,6 +19,7 @@
 // @grant        GM_setClipboard
 // ==/UserScript==
 
+const DEBUG_MODE = false;
 const msBetweenRequests = 2000;
 
 const userIdRegex = /\/users\/flag-summary\/(\d+)/
@@ -40,12 +41,17 @@ async function getHtmlDoc(url) {
 async function userScriptGetFlagsMenu(event) {
 
   let doc = await getHtmlDoc(firstPage);
-  const NUM_PAGES = parseInt([...doc.querySelectorAll(".s-pagination--item")].slice(-2,-1)[0].textContent)
-  console.log(`Retrieving ${NUM_PAGES} total pages`)
+
+  let numPages = parseInt([...doc.querySelectorAll(".s-pagination--item")].slice(-2,-1)[0].textContent)
+  if (DEBUG_MODE) {
+    console.log(`Retrieving 2 pages of ${numPages}. Retrieval limited to 2 pages in DEBUG_MODE.`)
+    numPages = 2
+  } else {
+    console.log(`Retrieving ${numPages} total pages`)
+  }
   
   let flags = [];
-  //for (let pageNum = 1; pageNum <= NUM_PAGES; pageNum++) {
-  for (let pageNum = 1; pageNum <= 2; pageNum++) {
+  for (let pageNum = 1; pageNum <= numPages; pageNum++) {
     sleep(msBetweenRequests);
     console.log(`Retrieving page ${pageNum}`);
     let url = `${domain}/users/flag-summary/${userId}?group=1&page=${pageNum}`;

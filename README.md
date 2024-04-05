@@ -5,6 +5,8 @@
 
 *Summary*: Retrieves your post flags on a Stack Exchange site
 
+*Install* through the normal TamperMonkey method - [open the raw Github source](https://github.com/NotTheDr01ds/stack-scripts/raw/main/SEFlags/GetSEFlags.user.js). TamperMonkey should detect the userscript and offer to install it.
+
 * Activation is done via the TamperMonkey extension menu. Click the "Get Post Flags" option under the userscript menu to start.
 * Status is reported in your browser dev console.
 

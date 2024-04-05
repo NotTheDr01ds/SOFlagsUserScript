@@ -2,7 +2,7 @@
 // @name         Get SE Post Flags
 // @namespace    http://github.com/NotTheDr01ds/stack-scripts
 // @description  Retrieve flags for a Stack Exchange site as JSON to clipboard
-// @version      0.90.1
+// @version      0.90.2
 // @updateURL    https://github.com/NotTheDr01ds/stack-scripts/raw/main/SEFlags/GetSEFlags.user.js
 // @downloadURL  https://github.com/NotTheDr01ds/stack-scripts/raw/main/SEFlags/GetSEFlags.user.js
 // @author       NotTheDr01ds
